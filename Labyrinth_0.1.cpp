@@ -3,10 +3,10 @@
 
 using namespace std;
 
-int width = 1280, height = 720;					//dimensioni finestra//									//DEFAULT: 1280, 720//
-float posX = 1, posY = 1, lookX = 0, lookY = 0;	//parametri di posizione e vista (lookAt)//				//DEFAULT: 0, 0, 0, 0//
-float angle = 0, pgreco = 3.14;					//angolo di rotazione del giocatore//					//DEFAULT: 0, 3.14//
-float rotationSpeed = 2, runSpeed = 0.2;		//velocit‡ di rotazione e corsa del giocatore//			//DEFAULT: 2, 0.3//
+int width = 1280, height = 720;			//dimensioni finestra//									//DEFAULT: 1280, 720//
+float posX = 1, posY = 1, lookX = 0, lookY = 0;	//parametri di posizione e vista (lookAt)//		//DEFAULT: 0, 0, 0, 0//
+float angle = 0, pgreco = 3.14;			//angolo di rotazione del giocatore//			//DEFAULT: 0, 3.14//
+float rotationSpeed = 2, runSpeed = 0.2;	//velocit√† di rotazione e corsa del giocatore//		//DEFAULT: 2, 0.3//
 float lookAngle = 60, zNear = 1.0, zFar = 40;	//angolo di visuale, distanze (min e max) di vista//	//DEFAULT: 60, 1, 40//
 
 void labyrinth(){
@@ -48,7 +48,7 @@ void setting(){
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(width, height);
-	glutCreateWindow("LABYRINTH - BPSô15");
+	glutCreateWindow("LABYRINTH - BPS‚Ñ¢15");
 	glClearColor(0, 0, 0, 0.0);
 	glShadeModel(GL_FLAT);//or GL_SMOOTH
 	glEnable(GL_DEPTH_TEST);//attiva il depth buffering
