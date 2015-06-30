@@ -4,19 +4,19 @@
 
 using namespace std;
 
-int width = 1280, height = 720;					//dimensioni finestra//									//DEFAULT: 1280, 720//
-float posX = 0, posY = 0, lookX = 0, lookY = 0;	//parametri di posizione e vista (lookAt)//				//DEFAULT: 0, 0, 0, 0//
-float angle = 0, pgreco = 3.14;					//angolo di rotazione del giocatore//					//DEFAULT: 0, 3.14//
-float rotationSpeed = 2, runSpeed = 0.2;		//velocit‡ di rotazione e corsa del giocatore//			//DEFAULT: 2, 0.2//
+int width = 1280, height = 720;			//dimensioni finestra//					//DEFAULT: 1280, 720//
+float posX = 0, posY = 0, lookX = 0, lookY = 0;	//parametri di posizione e vista (lookAt)//		//DEFAULT: 0, 0, 0, 0//
+float angle = 0, pgreco = 3.14;			//angolo di rotazione del giocatore//			//DEFAULT: 0, 3.14//
+float rotationSpeed = 2, runSpeed = 0.2;	//velocit√† di rotazione e corsa del giocatore//		//DEFAULT: 2, 0.2//
 float lookAngle = 60, zNear = 0.0005, zFar = 40;//angolo di visuale, distanze (min e max) di vista//	//DEFAULT: 60, 0.0005, 40//
 
 const int labWidth = 6, labHeight = 5, side = 8, hside = side*0.5;
 
 int matrixLab[labHeight][labWidth] = {	0, 0, 0, 0, 0, 0,
-										0, 1, 1, 1, 0, 0,
-										0, 1, 0, 1, 0, 0,
-										0, 1, 1, 1, 1, 0,
-										0, 0, 0, 0, 1, 0 };
+					0, 1, 1, 1, 0, 0,
+					0, 1, 0, 1, 0, 0,
+					0, 1, 1, 1, 1, 0,
+					0, 0, 0, 0, 1, 0 };
 
 void updatePos(int direction){
 	//direction = 1 muove in AVANTI di distanza pari a "runSpeed"//
@@ -91,7 +91,7 @@ void labyrinth(){
 	glTranslatef(0, 0, side);//sposta il cursore di disegno in alto
 	glColor3f(0, 1, 1);
 	disegnaSuperficie();//disegna il soffitto
-	glTranslatef(hside, hside, -hside);//sposta il cursore a met‡ tra pavimento e soffitto
+	glTranslatef(hside, hside, -hside);//sposta il cursore a met√† tra pavimento e soffitto
 	glColor3f(1, 0.35, 0);
 	disegnaMuri();//disegna le pareti
 
@@ -102,7 +102,7 @@ void setting(){
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(width, height);
-	glutCreateWindow("LABYRINTH - BPSô15");
+	glutCreateWindow("LABYRINTH - BPS‚Ñ¢15");
 	glClearColor(0, 0, 0, 0.0);
 	glShadeModel(GL_SMOOTH);//or GL_FLAT
 	glEnable(GL_DEPTH_TEST);//attiva il depth buffering
