@@ -6,20 +6,20 @@
 
 using namespace std;
 
-int width = 1280, height = 720;						//dimensioni finestra//									//DEFAULT: 1280, 720//
+int width = 1280, height = 720;				//dimensioni finestra//						//DEFAULT: 1280, 720//
 
-float posX = 0, posY = 0, lookX = 0, lookY = 0;		//parametri di posizione e vista (lookAt)//					//DEFAULT: 0, 0, 0, 0//
-float angle = 0, rotationSpeed = 2, runSpeed = 0.2;	//angolo e velocit‡ di rotazione e corsa del giocatore//	//DEFAULT: 0, 2, 0.2//
+float posX = 0, posY = 0, lookX = 0, lookY = 0;		//parametri di posizione e vista (lookAt)//			//DEFAULT: 0, 0, 0, 0//
+float angle = 0, rotationSpeed = 2, runSpeed = 0.2;	//angolo e velocit√† di rotazione e corsa del giocatore//	//DEFAULT: 0, 2, 0.2//
 float lookAngle = 60, zNear = 0.0005, zFar = 40;	//angolo di visuale, distanze (min e max) di vista//		//DEFAULT: 60, 0.0005, 40//
 
-const int labWidth = 6, labHeight = 5;				//grandezza della matrice del labitinto (width,height)//
-const int side = 8, hside = side / 2;				//larghezza nello spazio di una cella della matrice (side)//
+const int labWidth = 6, labHeight = 5;			//grandezza della matrice del labitinto (width,height)//
+const int side = 8, hside = side / 2;			//larghezza nello spazio di una cella della matrice (side)//
 
 float tposX = 0, tposY = 0, tposZ = side*4/9, tangle = 0, trotSpeed = 0.2;	//parametri di posizione e rotazione del "cuboRotante/sfera"//
-float tside = side/4, tray = tside*0.7, tslices = 32, tstacks = 32;			//lato cuboRot. (tside) parametri della sfera (tray,tslices,tstacks)//
+float tside = side/4, tray = tside*0.7, tslices = 32, tstacks = 32;		//lato cuboRot. (tside) parametri della sfera (tray,tslices,tstacks)//
 
-bool winMODE = false;								//vale true dopo la collisione con il cuboRotante//
-const float PIGRECO = 3.14;							//costante che rappresenta il pi-greco//
+bool winMODE = false;					//vale true dopo la collisione con il cuboRotante//
+const float PIGRECO = 3.14;				//costante che rappresenta il pi-greco//
 
 int matrixLab[labHeight][labWidth] = {	0, 0, 0, 0, 0, 0,
 										0, 1, 1, 1, 0, 0,
@@ -195,7 +195,7 @@ void setting(){
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(width, height);
-	glutCreateWindow("LABYRINTH - BPSô15");
+	glutCreateWindow("LABYRINTH - BPS‚Ñ¢15");
 	glClearColor(0, 0, 0, 0.0);
 	glShadeModel(GL_SMOOTH);//or GL_FLAT
 	glEnable(GL_DEPTH_TEST);//attiva il depth buffering
