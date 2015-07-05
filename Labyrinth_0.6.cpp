@@ -8,23 +8,23 @@
 
 using namespace std;
 
-int width = 1280, height = 720;						//dimensioni finestra//										//DEFAULT: 1280, 720//
+int width = 1280, height = 720;				//dimensioni finestra//						//DEFAULT: 1280, 720//
 
-const int labWidth = 12, labHeight = 8;				//grandezza della matrice del labitinto (width,height)//
-const float side = 4, hside = side/2;				//larghezza nello spazio di una cella della matrice (side)//
+const int labWidth = 12, labHeight = 8;			//grandezza della matrice del labitinto (width,height)//
+const float side = 4, hside = side/2;			//larghezza nello spazio di una cella della matrice (side)//
 
-float posX = 0, posY = 0, lookX = 0, lookY = 0;		//parametri di posizione e vista (lookAt)//					//DEFAULT: 0, 0, 0, 0//
-float angle = 0, rotationSpeed = 5, runSpeed = side/10;//angolo e velocità di rotazione e corsa del giocatore//	//DEFAULT: 0, 2, 0.2//
+float posX = 0, posY = 0, lookX = 0, lookY = 0;		//parametri di posizione e vista (lookAt)//			//DEFAULT: 0, 0, 0, 0//
+float angle = 0, rotationSpeed = 5, runSpeed = side/10;	//angolo e velocitÃ  di rotazione e corsa del giocatore//	//DEFAULT: 0, 2, 0.2//
 float lookAngle = 60, zNear = 0.0005, zFar = 40;	//angolo di visuale, distanze (min e max) di vista//		//DEFAULT: 60, 0.0005, 40//
 
 float tposX = 0, tposY = 0, tposZ = side*0.4, tangle = 0, trotSpeed = 2;	//parametri di posizione e rotazione del "cuboRotante/sfera"//
-float tside = side/4, tray = tside*0.7, tslices = 32, tstacks = 32;			//lato cuboRot. (tside) parametri della sfera (tray,tslices,tstacks)//
+float tside = side/4, tray = tside*0.7, tslices = 32, tstacks = 32;		//lato cuboRot. (tside) parametri della sfera (tray,tslices,tstacks)//
 
 bool winMODE = false, endMODE = false;				//vale true dopo la collisione con il cuboRotante//
-clock_t startTime;									//contiene il tempo trascorso dall'inizio della partita//
-const int playTime = 20;							//tempo disponibile per vincere la partita [in sec]//
-const int standTime = 5;							//tempo che trascorre prima che termini il programma dopo la vittoria [in sec]//
-const float PIGRECO = 3.14;							//costante che rappresenta il pi-greco//
+clock_t startTime;						//contiene il tempo trascorso dall'inizio della partita//
+const int playTime = 20;					//tempo disponibile per vincere la partita [in sec]//
+const int standTime = 5;					//tempo che trascorre prima che termini il programma dopo la vittoria [in sec]//
+const float PIGRECO = 3.14;					//costante che rappresenta il pi-greco//
 
 
 //percorsi texture per pavimento, soffitto, pareti, e schermata di vittoria e sconfitta//
@@ -213,7 +213,7 @@ void displayLabyrinth(){
 	if (winMODE){
 		glColor3f(0, 1, 0);
 		glutSolidSphere(tray, tslices, tstacks);
-		//se lo stand time è scaduto passa alla endingDisplay
+		//se lo stand time Ã¨ scaduto passa alla endingDisplay
 		if (clock() > startTime + (standTime * 1000)){
 			endMODE = true;
 		}
@@ -224,7 +224,7 @@ void displayLabyrinth(){
 		tangle += trotSpeed;
 		glRotatef(tangle, 0, 0, tangle);
 		glutSolidCube(tside);
-		//se il play time è scaduto passa alla endingDisplay
+		//se il play time Ã¨ scaduto passa alla endingDisplay
 		if (clock() > startTime + (playTime * 1000)){
 			endMODE = true;
 		}
@@ -273,7 +273,7 @@ void setting(){
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowPosition(0, 0);
 	glutInitWindowSize(width, height);
-	glutCreateWindow("LABYRINTH - BPS™15 (n3o@kali)");
+	glutCreateWindow("LABYRINTH - BPSÂ™15 (n3o@kali)");
 	glClearColor(0, 0, 0, 0.0);
 	glShadeModel(GL_FLAT);//o GL_SMOOTH
 	glEnable(GL_DEPTH_TEST);//attiva il depth buffering
